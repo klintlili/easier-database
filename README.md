@@ -20,7 +20,7 @@ Connect to a database:
 
 ```php
 # the constructor takes the same parameters as the PDO constructor
-$Base = new \Base\Base('mysql:host=localhost;dbname=example', 'username', 'password');
+$Base = new \klintlili\base\Base('mysql:host=localhost;dbname=example', 'username', 'password');
 ```
 
 Work with records:
