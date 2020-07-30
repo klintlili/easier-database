@@ -1,6 +1,6 @@
 {
     "name": "xiongjian/easier-databases",
-    "description": "Base is a simple library that makes it easier to work with databases in PHP",
+    "description": "Base is a simple library that makes it easier to work with mysql databases in PHP",
     "keywords": ["php", "mysql", "composer", "project template"],
     "homepage": "https://github.com/xiongjian/easier-databases/",
     "type": "library",
