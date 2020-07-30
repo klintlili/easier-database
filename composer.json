@@ -2,10 +2,17 @@
     "name": "xiongjian/easier-databases",
     "description": "Base is a simple library that makes it easier to work with databases in PHP",
     "keywords": ["php", "mysql", "composer", "project template"],
-    "homepage": "https://github.com/erusev/base/",
-    "type": "project",
-    "license": "BSD-3-Clause",
+    "homepage": "https://github.com/xiongjian/easier-databases/",
+    "type": "library",
+    "license": "MIT",
     "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "klintlili",
+            "email": "909102757@qq.com",
+            "homepage": "https:/www.xiongxi.net/"
+        }
+    ],
     "require": {
         "php": ">=5.6.0",
     },
@@ -17,6 +24,9 @@
         "fxp-asset": {
             "enabled": false
         }
+    },
+    "autoload": {
+        "psr-4": { "Base\\": "src" }
     },
     "repositories": {
         "asset-packagist": {
