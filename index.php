@@ -1,8 +1,8 @@
 <?php
 header("Content-Type: text/html; charset=utf-8");
 // require("vendor/autoload.php");
-require("src/Base.php");
-require("src/Collection.php");
+//require("src/Base.php");
+//require("src/Collection.php");
 
 define('DB_HOST', 'localhost');
 define('DB_SCHEMA', 'example');
@@ -32,7 +32,7 @@ if( version_compare(PHP_VERSION, '5.3.6', '<') ){
 }
 
 # the constructor takes the same parameters as the PDO constructor
-$Base = new \src\Base($dsn, DB_USER, DB_PASSWORD, $options);
+$Base = new \klintlili\Base($dsn, DB_USER, DB_PASSWORD, $options);
 
 if( version_compare(PHP_VERSION, '5.3.6', '<') && !defined('PDO::MYSQL_ATTR_INIT_COMMAND') ){
     $Base->pdo()->exec("SET NAMES " . DB_ENCODING);
