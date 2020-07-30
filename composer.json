@@ -16,9 +16,6 @@
     "require": {
         "php": ">=5.6.0"
     },
-    "require-dev": {
-      "erusev/base": "*"
-    },
     "config": {
         "process-timeout": 1800,
         "fxp-asset": {
@@ -26,7 +23,7 @@
         }
     },
     "autoload": {
-        "psr-4": { "Base\\": "src" }
+        "psr-4": { "klintlili\\Base\\": "src" }
     },
     "repositories": {
         "asset-packagist": {
