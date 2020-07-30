@@ -10,11 +10,11 @@
         {
             "name": "klintlili",
             "email": "909102757@qq.com",
-            "homepage": "https:/www.xiongxi.net/"
+            "homepage": "https://www.xiongxi.net/"
         }
     ],
     "require": {
-        "php": ">=5.6.0",
+        "php": ">=5.6.0"
     },
     "require-dev": {
       "erusev/base": "*"
