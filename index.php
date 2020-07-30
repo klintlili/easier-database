@@ -1,7 +1,7 @@
 <?php
 header("Content-Type: text/html; charset=utf-8");
 //import class
-//require("vendor/autoload.php");
+require("vendor/autoload.php");
 //require("src/Base.php");
 //require("src/Collection.php");
 
@@ -38,7 +38,6 @@ $Base = new \klintlili\base\Base($dsn, DB_USER, DB_PASSWORD, $options);
 if( version_compare(PHP_VERSION, '5.3.6', '<') && !defined('PDO::MYSQL_ATTR_INIT_COMMAND') ){
     $Base->pdo()->exec("SET NAMES " . DB_ENCODING);
 }
-
 // 在创建连接后，加入
 //使用PDO查询mysql数据库时，执行prepare,execute后，返回的字段数据全都变为字符型。
 $Base->pdo()->setAttribute(\PDO::ATTR_STRINGIFY_FETCHES, false);
