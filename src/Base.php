@@ -1,6 +1,6 @@
 <?php
 
-namespace Base;
+namespace klintlili\base;
 
 use Exception;
 use PDO;

@@ -1,8 +1,8 @@
 {
-    "name": "xiongjian/easier-databases",
+    "name": "klintlili/easier-databases",
     "description": "Base is a simple library that makes it easier to work with mysql databases in PHP",
     "keywords": ["php", "mysql", "composer", "project template"],
-    "homepage": "https://github.com/xiongjian/easier-databases/",
+    "homepage": "https://github.com/klintlili/easier-databases/",
     "type": "library",
     "license": "MIT",
     "minimum-stability": "dev",
@@ -23,7 +23,7 @@
         }
     },
     "autoload": {
-        "psr-4": { "klintlili\\Base\\": "src" }
+        "psr-4": { "klintlili\\base\\": "src" }
     },
     "repositories": {
         "asset-packagist": {

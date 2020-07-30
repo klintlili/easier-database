@@ -1,6 +1,7 @@
 <?php
 header("Content-Type: text/html; charset=utf-8");
-// require("vendor/autoload.php");
+//import class
+//require("vendor/autoload.php");
 //require("src/Base.php");
 //require("src/Collection.php");
 
@@ -12,12 +13,12 @@ define('DB_ENCODING', 'utf8');
 
 $dsn = 'mysql:host=' . DB_HOST . ';dbname=' . DB_SCHEMA;
 $options = [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
 ];
 
 if( version_compare(PHP_VERSION, '5.3.6', '<') ){
     if( defined('PDO::MYSQL_ATTR_INIT_COMMAND') ){
-        $options[PDO::MYSQL_ATTR_INIT_COMMAND] = 'SET NAMES ' . DB_ENCODING;
+        $options[\PDO::MYSQL_ATTR_INIT_COMMAND] = 'SET NAMES ' . DB_ENCODING;
     }
 }else{
     $dsn .= ';charset=' . DB_ENCODING; //这个就起作用了
@@ -25,22 +26,23 @@ if( version_compare(PHP_VERSION, '5.3.6', '<') ){
 
 if( version_compare(PHP_VERSION, '5.3.6', '<') ){
     if( defined('PDO::MYSQL_ATTR_INIT_COMMAND') ){
-        $options[PDO::MYSQL_ATTR_INIT_COMMAND] = 'SET NAMES ' . DB_ENCODING; //也是有用的
+        $options[\PDO::MYSQL_ATTR_INIT_COMMAND] = 'SET NAMES ' . DB_ENCODING; //也是有用的
     }
 }else{
     $dsn .= ';charset=' . DB_ENCODING;
 }
 
 # the constructor takes the same parameters as the PDO constructor
-$Base = new \klintlili\Base($dsn, DB_USER, DB_PASSWORD, $options);
+$Base = new \klintlili\base\Base($dsn, DB_USER, DB_PASSWORD, $options);
 
 if( version_compare(PHP_VERSION, '5.3.6', '<') && !defined('PDO::MYSQL_ATTR_INIT_COMMAND') ){
     $Base->pdo()->exec("SET NAMES " . DB_ENCODING);
 }
+
 // 在创建连接后，加入
 //使用PDO查询mysql数据库时，执行prepare,execute后，返回的字段数据全都变为字符型。
-$Base->pdo()->setAttribute(PDO::ATTR_STRINGIFY_FETCHES, false);
-$Base->pdo()->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+$Base->pdo()->setAttribute(\PDO::ATTR_STRINGIFY_FETCHES, false);
+$Base->pdo()->setAttribute(\PDO::ATTR_EMULATE_PREPARES, false);
 
 // Work with records:
 
